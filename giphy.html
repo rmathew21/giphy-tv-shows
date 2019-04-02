@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Giphy</title>
+    <style type="text/css">
+        button,
+        div,
+        form,
+        input {
+            margin: 10px;
+        }
+    </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -14,13 +23,20 @@
         </div>
     </div>
 
+    <!-- Movies will be dumped here -->
     <div id="buttons-view"></div>
 
     <form id="tv-form">
         <label for="tv-form">Add your favorite TV shows here</label>
         <input type="text" id="tv-input"><br>
+
+        <!-- Button triggers new movie to be added -->
         <input id="add-tv" type="submit" value="Add your show!">
     </form>
+
+    <!-- Gifs will get added here-->
+    <div id="gifs-appear-here">
+    </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="./assets/app.js"></script>
