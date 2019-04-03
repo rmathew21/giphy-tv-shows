@@ -4,16 +4,17 @@
     var queries = ["Fresh Prince of Bel Air", "The Office", "Game of Thrones", "Friends"];
 
     // Event listener for our buttons
-    $("#button-view").on("click", function() {
+    $("body").on("click", ".tv", function() {
 
         var giphy = $(this).attr("data-name");
-   
+        console.log(giphy);
         // Storing our giphy API URL for gifs
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=oWLpp9Hr35Lq9D2sfkMn1vHyQDsKB1S3&q=event listeners&limit=25&offset=0&rating=PG-13&lang=en";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=oWLpp9Hr35Lq9D2sfkMn1vHyQDsKB1S3&q=" +
+         giphy + "&limit=25&offset=0&rating=PG-13&lang=en";
 
         // Function for dumping giphy content for each button into the div
         // function displayGiphyInfo() {
-        function displayGiphyInfo() {
+        // function displayGiphyInfo() {
 
     
         //Performing AJAX GET request 
@@ -22,7 +23,7 @@
             method: "GET"
 
         }).then(function(response) {
-
+            console.log(response);
             // Storing an array of results in the results variable
             var results = response.data;
 
@@ -31,7 +32,7 @@
 
                 // Only taking action if the photo has an appropriate rating
                 if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-                    // Creating a dive for the gif
+                    // Creating a div for the gif
                     var gifDiv = $("<div>");
 
                     // Storing the results item's rating
@@ -60,9 +61,9 @@
 
             // $("#gifs-appear-here").text(JSON.stringify(response));
         });
-    }
-    
     });
+    
+    // });
 // Function for displaying tv data
 function renderButtons() {
 
