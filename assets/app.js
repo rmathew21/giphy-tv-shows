@@ -1,5 +1,3 @@
-
-
     // Initial array of tv shows
     var queries = ["Fresh Prince of Bel Air", "The Office", "Game of Thrones", "Friends"];
 
